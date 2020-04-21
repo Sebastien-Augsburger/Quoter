@@ -27,6 +27,10 @@
             request.onload = () => {
               const response = request.responseText;
               document.querySelector('#body').innerHTML = response;
+
+              // Push state to url
+              document.title = name;
+              history.pushState(null, name, name);
             };
             request.send();
         }
